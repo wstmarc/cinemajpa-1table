@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en"
+xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr th:each="personne: ${personnes}">
+        <td><span th:text="${personne.id}"></span></td>
+        <td><span th:text="${personne.nom}"></span></td>
+        <td><span th:text="${personne.prenom}"></span></td>
+        <td><span th:text="${personne.naissance}"></span></td>
+        <td><span th:text="${personne.photoPath}"></span></td>
+        <td><a href="#" th:href="@{'/person/detail/'+${personne.id}}">detail</a> / <a href="#" th:href="@{'/person/del/'+${personne.id}}">supprimer</a> </td>
+    </tr>
+</table>
+
+</body>
+</html>
